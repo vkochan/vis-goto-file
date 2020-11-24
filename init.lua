@@ -208,7 +208,9 @@ local function preprocess(tbl)
 end
 
 vis.events.subscribe(vis.events.INIT, function()
-	preprocess(M.workspaces)
+	if M.workspaces then
+		preprocess(M.workspaces)
+	end
 end)
 
 local ignoredups = {
